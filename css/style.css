@@ -1,5 +1,136 @@
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #004643;
+}
+
+@font-face {
+  font-family: 'Metropolis-bold';
+  src: url("../font/metropolis.bold.otf");
+}
+
+@font-face {
+  font-family: 'Metropolis-medium';
+  src: url("../font/metropolis.medium.otf");
+}
+
+h1 {
+  font-family: 'Metropolis-bold', sans-serif;
+  color: #fffffe;
+}
+
+p {
+  font-family: 'Metropolis-medium', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fffffe;
+  font-family: 'Metropolis-bold', sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-block: 5vh;
+  max-width: 1200px;
+}
+
+.header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.7rem;
+}
+
+.logo a img {
+  width: 3.3rem;
+  height: 3.3rem;
+}
+
+.logo a .logo__text {
+  font-family: 'Metropolis-bold', sans-serif;
+  color: #fffffe;
+  font-size: 1.4rem;
+}
+
+.nav ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero h1 {
+  line-height: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.hero img {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  min-width: 360px;
+  max-width: 720px;
+}
+
+.hero p {
+  color: #abd1c6;
+  line-height: 2rem;
+}
+
+.hero .cta {
+  background-color: #f9bc60;
+  width: 4rem;
+  padding: 1.3rem 0.9rem;
+  border-radius: 0.7rem;
+  text-align: center;
+}
+
+.hero .cta a {
+  color: #001e1d;
+  font-size: 0.8rem;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

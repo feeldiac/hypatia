@@ -1,5 +1,8 @@
 //      Square's code
-console.group('Squares');
+const squareSide = document.getElementById('square-side');
+const squarePerimeterBtn = document.getElementById('square-perimeter');
+const squareAreaBtn = document.getElementById('square-area');
+
 function squarePerimeter(side) {
   return side * 4;
 }
@@ -7,7 +10,14 @@ function squarePerimeter(side) {
 function squareArea(side) {
   return Math.pow(side, 2);
 }
-console.groupEnd();
+
+squarePerimeterBtn.addEventListener('click', function () {
+  console.log(squarePerimeter(parseFloat(squareSide.value)));
+});
+
+squareAreaBtn.addEventListener('click', function () {
+  console.log(squareArea(parseFloat(squareSide.value)));
+});
 
 //      Triangle's code
 console.group('Triangles');

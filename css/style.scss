@@ -4,10 +4,12 @@ $clr-button: #f9bc60;
 $clr-button-text: #001e1d;
 $clr-headline: #fffffe;
 $clr-paragraph: #abd1c6;
+//Color S2
+$clr-subheadline: #0f3433;
 
 body {
   box-sizing: border-box;
-  background-color: $clr-background;
+  margin: 0;
 }
 
 @font-face {
@@ -41,11 +43,17 @@ a {
 
 .container {
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-block: 5vh;
-  max-width: 1200px;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-block: 5vh;
+  padding: 5%;
+  // max-width: 1200px;
+  background-color: $clr-background;
 }
+
+// .header {
+
+// }
 
 .header__top {
   display: flex;
@@ -114,6 +122,94 @@ a {
       color: $clr-button-text;
       font-size: 0.8rem;
       text-align: center;
+    }
+  }
+}
+
+.geometry {
+  background-color: $clr-paragraph;
+  padding: 5%;
+  .subtitle-info {
+    h2 {
+      font-family: 'Metropolis-bold', sans-serif;
+      color: $clr-button-text;
+    }
+
+    p {
+      color: $clr-subheadline;
+      line-height: 2rem;
+    }
+  }
+
+  .geometry__cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.geometry__card {
+  background-color: $clr-background;
+  padding: 5%;
+  min-width: 280px;
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .card-top__img-container {
+      background-color: $clr-paragraph;
+      border: 2px solid $clr-button-text;
+      border-radius: 3px;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+
+    h3 {
+      display: inline-block;
+      color: $clr-headline;
+      font-family: 'Metropolis-bold', sans-serif;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    label,
+    input {
+      font-family: 'Metropolis-medium', sans-serif;
+      display: block;
+      width: 100%;
+    }
+
+    label {
+      color: $clr-headline;
+      margin-bottom: 0.6rem;
+    }
+
+    input {
+      box-sizing: border-box;
+      border: 1px solid $clr-button-text;
+      color: $clr-headline;
+      border-radius: 3px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid $clr-button-text;
+      color: $clr-headline;
+      border-radius: 3px;
+      letter-spacing: 2px;
     }
   }
 }

@@ -43,17 +43,9 @@ a {
 
 .container {
   width: 90%;
-  // margin-left: auto;
-  // margin-right: auto;
-  // margin-block: 5vh;
   padding: 5%;
-  // max-width: 1200px;
   background-color: $clr-background;
 }
-
-// .header {
-
-// }
 
 .header__top {
   display: flex;
@@ -81,8 +73,6 @@ a {
 
 .nav {
   ul {
-    // margin-left: auto;
-    // margin-right: auto;
     padding: 0;
     display: flex;
     align-items: center;
@@ -103,7 +93,7 @@ a {
   img {
     order: -1;
     align-self: center;
-    min-width: 360px;
+    min-width: 280px;
     max-width: 720px;
   }
 
@@ -225,4 +215,46 @@ a {
       font-family: 'Metropolis-bold', sans-serif;
     }
   }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -10;
+
+  .modal-container {
+    background: $clr-button;
+    border-radius: 3px;
+    width: 90vw;
+    height: 30vh;
+    max-width: 500px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-family: 'Metropolis-bold', sans-serif;
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      background: transparent;
+      border-color: transparent;
+      color: $clr-button-text;
+      cursor: pointer;
+    }
+  }
+}
+/* OPEN/CLOSE MODAL */
+.open-modal {
+  visibility: visible;
+  z-index: 10;
 }

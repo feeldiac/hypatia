@@ -19,6 +19,10 @@ h1 {
   color: #fffffe;
 }
 
+h2 {
+  font-family: 'Metropolis-bold', sans-serif;
+}
+
 p {
   font-family: 'Metropolis-medium', sans-serif;
 }
@@ -31,6 +35,10 @@ a {
   text-decoration: none;
   color: #fffffe;
   font-family: 'Metropolis-bold', sans-serif;
+}
+
+section {
+  padding: 5%;
 }
 
 .container {
@@ -167,7 +175,6 @@ a {
 
 .geometry {
   background-color: #abd1c6;
-  padding: 5%;
 }
 
 .geometry .subtitle-info h2 {

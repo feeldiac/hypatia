@@ -29,6 +29,9 @@ h1 {
   color: $clr-headline;
 }
 
+h2 {
+  font-family: 'Metropolis-bold', sans-serif;
+}
 p {
   font-family: 'Metropolis-medium', sans-serif;
 }
@@ -41,6 +44,10 @@ a {
   text-decoration: none;
   color: $clr-headline;
   font-family: 'Metropolis-bold', sans-serif;
+}
+
+section {
+  padding: 5%;
 }
 
 .container {
@@ -138,7 +145,7 @@ a {
 
 .geometry {
   background-color: $clr-paragraph;
-  padding: 5%;
+  // padding: 5%;
   .subtitle-info {
     h2 {
       font-family: 'Metropolis-bold', sans-serif;

@@ -97,9 +97,28 @@ a {
           flex-direction: column;
 }
 
+@media screen and (min-width: 768px) {
+  .hero {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .hero h1 {
   line-height: 2.5rem;
   font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero h1 {
+    line-height: 2.75rem;
+    font-size: 2.1rem;
+  }
 }
 
 .hero img {
@@ -118,18 +137,32 @@ a {
   line-height: 2rem;
 }
 
-.hero .cta {
-  background-color: #f9bc60;
-  width: 4rem;
-  padding: 1.3rem 0.9rem;
-  border-radius: 0.7rem;
+@media screen and (min-width: 768px) {
+  .hero p {
+    line-height: 2.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+.hero a {
+  color: #001e1d;
   text-align: center;
 }
 
-.hero .cta a {
-  color: #001e1d;
-  font-size: 0.8rem;
+.hero a .cta {
+  background-color: #f9bc60;
+  width: 5.2rem;
+  padding: 1.3rem 0.9rem;
+  border-radius: 0.7rem;
   text-align: center;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero a .cta {
+    font-size: 1.1rem;
+    padding: 1.45rem 1.05rem;
+  }
 }
 
 .geometry {
@@ -158,11 +191,30 @@ a {
   gap: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  .geometry .geometry__cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .geometry__card {
   background-color: #004643;
   padding: 5%;
-  min-width: 280px;
+  min-width: 250px;
   border-radius: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .geometry__card {
+    padding: 3%;
+    width: 41%;
+  }
 }
 
 .geometry__card .card-top {

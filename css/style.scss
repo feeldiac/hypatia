@@ -1,3 +1,5 @@
+@import '_mixins.scss';
+
 //Colors
 $clr-background: #004643;
 $clr-button: #f9bc60;
@@ -85,9 +87,18 @@ a {
   display: flex;
   flex-direction: column;
 
+  @include breakpoint(medium) {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
   h1 {
     line-height: 2.5rem;
     font-size: 1.8rem;
+    @include breakpoint(medium) {
+      line-height: 2.75rem;
+      font-size: 2.1rem;
+    }
   }
 
   img {
@@ -100,18 +111,27 @@ a {
   p {
     color: $clr-paragraph;
     line-height: 2rem;
+    @include breakpoint(medium) {
+      line-height: 2.2rem;
+      font-size: 1.1rem;
+    }
   }
 
-  .cta {
-    background-color: $clr-button;
-    width: 4rem;
-    padding: 1.3rem 0.9rem;
-    border-radius: 0.7rem;
+  a {
+    color: $clr-button-text;
     text-align: center;
-    a {
-      color: $clr-button-text;
-      font-size: 0.8rem;
+
+    .cta {
+      background-color: $clr-button;
+      width: 5.2rem;
+      padding: 1.3rem 0.9rem;
+      border-radius: 0.7rem;
       text-align: center;
+      font-size: 0.8rem;
+      @include breakpoint(medium) {
+        font-size: 1.1rem;
+        padding: 1.45rem 1.05rem;
+      }
     }
   }
 }
@@ -135,14 +155,24 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @include breakpoint(medium) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
   }
 }
 
 .geometry__card {
   background-color: $clr-background;
   padding: 5%;
-  min-width: 280px;
+  min-width: 250px;
   border-radius: 3px;
+
+  @include breakpoint(medium) {
+    padding: 3%;
+    width: 41%;
+  }
   .card-top {
     display: flex;
     align-items: center;

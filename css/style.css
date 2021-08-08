@@ -214,7 +214,7 @@ section {
   background-color: #004643;
   padding: 5%;
   min-width: 250px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -237,7 +237,7 @@ section {
 .geometry__card .card-top .card-top__img-container {
   background-color: #abd1c6;
   border: 2px solid #001e1d;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 2.2rem;
   height: 2.2rem;
   display: -webkit-box;
@@ -300,7 +300,7 @@ section {
           box-sizing: border-box;
   border: 2px solid #001e1d;
   color: #001e1d;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 0.5rem;
   font-family: 'Metropolis-bold', sans-serif;
 }
@@ -311,11 +311,206 @@ section {
   background-color: transparent;
   border: 2px solid #001e1d;
   color: #fffffe;
-  border-radius: 3px;
+  border-radius: 5px;
   letter-spacing: 2px;
   padding: 0.5rem;
   cursor: pointer;
   font-family: 'Metropolis-bold', sans-serif;
+}
+
+.discounts {
+  background-color: #0f3433;
+}
+
+.discounts h2 {
+  color: #fffffe;
+}
+
+.discounts p {
+  line-height: 1.5rem;
+  color: #abd1c6;
+}
+
+.discounts .discount-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.discount-box h3 {
+  color: #001e1d;
+  font-family: 'Metropolis-bold', sans-serif;
+  text-align: center;
+}
+
+.discount-box .discount-box__left {
+  padding: 5%;
+  background-color: #e8e4e6;
+  border-radius: 5px;
+}
+
+.discount-box .discount-box__left form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.discount-box .discount-box__left .form-group {
+  color: #0f3433;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.discount-box .discount-box__left .form-group label {
+  font-family: 'Metropolis-medium', sans-serif;
+}
+
+.discount-box .discount-box__left .form-group input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #0f3433;
+  color: #0f3433;
+  border-radius: 5px;
+  padding: 0.35rem;
+  font-family: 'Metropolis-bold', sans-serif;
+}
+
+.discount-box .discount-box__left button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #0f3433;
+  color: #0f3433;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: 'Metropolis-bold', sans-serif;
+}
+
+.discount-box .discount-box__right {
+  padding: 5%;
+  border: 2px solid white;
+  background-color: #e8e4e6;
+  border-radius: 5px;
+}
+
+.discount-box .discount-box__right img {
+  display: block;
+  margin: 1rem auto;
+  width: 70%;
+}
+
+.discount-box .discount-box__right div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0.5rem;
+  font-family: 'Metropolis-bold', sans-serif;
+  font-size: 1.2rem;
+}
+
+.discount-box .discount-box__right .before-container span {
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #e16162;
+          text-decoration-color: #e16162;
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+}
+
+.coupon-container {
+  margin-top: 1rem;
+}
+
+.coupon-container .radiobtn {
+  position: relative;
+  display: block;
+}
+
+.coupon-container .radiobtn label {
+  display: block;
+  background: rgba(0, 0, 0, 0.2);
+  color: #0f3433;
+  font-family: 'Metropolis-bold', sans-serif;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 2px solid grey;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.coupon-container .radiobtn label:after,
+.coupon-container .radiobtn label:before {
+  content: '';
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: grey;
+}
+
+.coupon-container .radiobtn label:before {
+  background: transparent;
+  -webkit-transition: 0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s, 0.3s height cubic-bezier(0.075, 0.82, 0.165, 2) 0.1s;
+  transition: 0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s, 0.3s height cubic-bezier(0.075, 0.82, 0.165, 2) 0.1s;
+  z-index: 2;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center;
+  width: 0;
+  height: 0;
+  background-image: url("../img/checked.svg");
+}
+
+.coupon-container input[type='radio'] {
+  display: none;
+}
+
+.coupon-container input[type='radio']:checked + label {
+  background: grey;
+  color: white;
+  border-color: #004643;
+}
+
+.coupon-container input[type='radio']:checked + label:after {
+  background: #004643;
+}
+
+.coupon-container input[type='radio']:checked + label:before {
+  width: 20px;
+  height: 20px;
 }
 
 .modal-overlay {
@@ -334,7 +529,7 @@ section {
 
 .modal-overlay .modal-container {
   background: #f9bc60;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 90vw;
   height: 30vh;
   max-width: 500px;

@@ -275,6 +275,11 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @include breakpoint(medium) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -286,14 +291,18 @@ section {
   }
   .discount-box__left {
     padding: 5%;
-    // border: 2px solid white;
     background-color: $clr-card-background;
     border-radius: $border-rad;
+
+    @include breakpoint(medium) {
+      padding: 3%;
+      width: 40%;
+    }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
     }
     .form-group {
       color: $clr-subheadline;
@@ -335,11 +344,16 @@ section {
     border: 2px solid white;
     background-color: $clr-card-background;
     border-radius: $border-rad;
+    @include breakpoint(medium) {
+      padding: 3%;
+      width: 40%;
+    }
 
     img {
       display: block;
-      margin: 1rem auto;
-      width: 70%;
+      margin-inline: auto;
+      margin-block: 3rem;
+      width: 68%;
     }
 
     div {

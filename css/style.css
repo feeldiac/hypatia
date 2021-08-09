@@ -342,6 +342,18 @@ section {
   gap: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  .discounts .discount-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .discount-box h3 {
   color: #001e1d;
   font-family: 'Metropolis-bold', sans-serif;
@@ -354,6 +366,13 @@ section {
   border-radius: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .discount-box .discount-box__left {
+    padding: 3%;
+    width: 40%;
+  }
+}
+
 .discount-box .discount-box__left form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -362,7 +381,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .discount-box .discount-box__left .form-group {
@@ -412,10 +431,18 @@ section {
   border-radius: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .discount-box .discount-box__right {
+    padding: 3%;
+    width: 40%;
+  }
+}
+
 .discount-box .discount-box__right img {
   display: block;
-  margin: 1rem auto;
-  width: 70%;
+  margin-inline: auto;
+  margin-block: 3rem;
+  width: 68%;
 }
 
 .discount-box .discount-box__right div {

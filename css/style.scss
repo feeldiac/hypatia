@@ -366,23 +366,21 @@ section {
       font-family: 'Metropolis-bold', sans-serif;
       font-size: 1.2rem;
     }
-
-    .before-container {
-      span {
-        text-decoration: line-through;
-        text-decoration-color: $clr-tertiary;
-        text-decoration-style: wavy;
-        text-decoration-thickness: 2px;
-      }
-    }
   }
+}
+
+.before {
+  text-decoration: line-through;
+  text-decoration-color: $clr-tertiary;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
 }
 
 $accentcolor: $clr-background;
 
 .coupon-container {
+  display: none;
   margin-top: 1rem;
-
   .radiobtn {
     position: relative;
     display: block;
@@ -438,6 +436,10 @@ $accentcolor: $clr-background;
     width: 20px;
     height: 20px;
   }
+}
+
+.view-coupons {
+  display: block;
 }
 
 //modal window

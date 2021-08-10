@@ -173,14 +173,14 @@
             <form>
               <div class="form-group">
                 <label for="dis-price">Price:</label>
-                <input id="dis-price" type="number" />
+                <input id="dis-price" type="number" min="1" />
               </div>
               <div class="form-group">
                 <label for="dis-discount">Discount (%):</label>
-                <input id="dis-discount" type="number" />
+                <input id="dis-discount" type="number" min="1" max="100" />
               </div>
               <div class="coupon-list">
-                <button type="button">Add a coupon</button>
+                <button id="add-coupon" type="button">Add a coupon</button>
                 <div class="coupon-container">
                   <div class="radiobtn">
                     <input
@@ -211,7 +211,7 @@
                   </div>
                 </div>
               </div>
-              <button type="button">Calculate</button>
+              <button id="calculate" type="button">Calculate</button>
             </form>
           </div>
           <div class="discount-box__right">
@@ -221,12 +221,12 @@
               alt="Random product from unsplash"
             />
             <div class="before-container">
-              <span>before</span>
-              <span class="before-value">100 USD</span>
+              <span>before:</span>
+              <span class="before-value">x USD</span>
             </div>
             <div class="after-container">
-              <span>after</span>
-              <span class="after-value">72 USD</span>
+              <span></span>
+              <span class="after-value"></span>
             </div>
           </div>
         </div>
@@ -240,5 +240,6 @@
       </div>
     </div>
     <script src="figuras.js"></script>
+    <script src="discounts.js"></script>
   </body>
 </html>

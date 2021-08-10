@@ -465,7 +465,7 @@ section {
   font-size: 1.2rem;
 }
 
-.discount-box .discount-box__right .before-container span {
+.before {
   text-decoration: line-through;
   -webkit-text-decoration-color: #e16162;
           text-decoration-color: #e16162;
@@ -475,6 +475,7 @@ section {
 }
 
 .coupon-container {
+  display: none;
   margin-top: 1rem;
 }
 
@@ -538,6 +539,10 @@ section {
 .coupon-container input[type='radio']:checked + label:before {
   width: 20px;
   height: 20px;
+}
+
+.view-coupons {
+  display: block;
 }
 
 .modal-overlay {

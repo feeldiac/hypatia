@@ -75,7 +75,7 @@ calculateBtn.addEventListener('click', function () {
     beforeSpans.forEach(function (span) {
       span.classList.add('before');
     });
-    afterValue.innerHTML = `${newPrice(price, discount)} USD`;
+    afterValue.innerHTML = `after: ${newPrice(price, discount)} USD`;
   } else {
     //Open modal window and show error msg
     modalMsg.innerHTML = 'Please introduce valid inputs';

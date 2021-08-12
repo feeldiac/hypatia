@@ -1,5 +1,15 @@
 @import '_mixins.scss';
 
+@font-face {
+  font-family: 'Metropolis-bold';
+  src: url('../font/metropolis.bold.otf');
+}
+
+@font-face {
+  font-family: 'Metropolis-medium';
+  src: url('../font/metropolis.medium.otf');
+}
+
 //Colors
 $clr-background: #004643;
 $clr-button: #f9bc60;
@@ -12,33 +22,35 @@ $clr-subheadline: #0f3433;
 //Color S3
 $clr-card-background: #e8e4e6;
 
+//Fonts
+$ff-bold: 'Metropolis-bold', sans-serif;
+$ff-medium: 'Metropolis-medium', sans-serif;
+
+//Border radius
 $border-rad: 5px;
 
+//General rules
 body {
   box-sizing: border-box;
   margin: 0;
 }
 
-@font-face {
-  font-family: 'Metropolis-bold';
-  src: url('../font/metropolis.bold.otf');
-}
-
-@font-face {
-  font-family: 'Metropolis-medium';
-  src: url('../font/metropolis.medium.otf');
-}
-
 h1 {
-  font-family: 'Metropolis-bold', sans-serif;
+  font-family: $ff-bold;
   color: $clr-headline;
 }
 
 h2 {
-  font-family: 'Metropolis-bold', sans-serif;
+  font-family: $ff-bold;
 }
+
+h3 {
+  font-family: $ff-bold;
+  text-align: center;
+}
+
 p {
-  font-family: 'Metropolis-medium', sans-serif;
+  font-family: $ff-medium;
 }
 
 ul {
@@ -48,11 +60,27 @@ ul {
 a {
   text-decoration: none;
   color: $clr-headline;
-  font-family: 'Metropolis-bold', sans-serif;
+  font-family: $ff-bold;
 }
 
 section {
   padding: 5%;
+}
+
+form {
+  @include flex($justify-content: initial, $align-items: initial);
+  gap: 2rem;
+}
+
+button[type='button'] {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border-radius: $border-rad;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: $ff-bold;
 }
 
 .container {
@@ -62,23 +90,19 @@ section {
 }
 
 .header__top {
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
+  @include flex($justify-content: initial);
 }
 
 .logo {
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex($flex-direction: row);
     gap: 0.7rem;
     img {
       width: 3.3rem;
       height: 3.3rem;
     }
     .logo__text {
-      font-family: 'Metropolis-bold', sans-serif;
+      font-family: $ff-bold;
       color: $clr-headline;
       font-size: 1.4rem;
     }
@@ -88,17 +112,13 @@ section {
 .nav {
   ul {
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex($flex-direction: row);
     gap: 1rem;
   }
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-
+  @include flex($justify-content: initial);
   @include breakpoint(medium) {
     flex-direction: row-reverse;
     align-items: center;
@@ -148,35 +168,26 @@ section {
   }
 }
 
-.geometry {
-  background-color: $clr-paragraph;
-  // padding: 5%;
-  .subtitle-info {
-    h2 {
-      font-family: 'Metropolis-bold', sans-serif;
-      color: $clr-button-text;
-    }
-
-    p {
-      color: $clr-subheadline;
-      line-height: 1.5rem;
-    }
-  }
-
-  .geometry__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @include breakpoint(medium) {
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
+//Common Section Rules
+.subtitle-info {
+  p {
+    line-height: 1.5rem;
   }
 }
 
-.geometry__card {
-  background-color: $clr-background;
+.cards-container {
+  @include flex($justify-content: initial, $align-items: initial);
+  gap: 1rem;
+  @include breakpoint(medium) {
+    @include flex(
+      $justify-content: space-between,
+      $flex-direction: row,
+      $flex-wrap: wrap
+    );
+  }
+}
+
+.card {
   padding: 5%;
   min-width: 250px;
   border-radius: $border-rad;
@@ -185,9 +196,41 @@ section {
     padding: 3%;
     width: 41%;
   }
+}
+
+.form-group {
+  label {
+    font-family: $ff-medium;
+  }
+
+  input {
+    box-sizing: border-box;
+    border-radius: $border-rad;
+    padding: 0.5rem;
+    font-family: $ff-bold;
+  }
+}
+
+// ***Geometry Section*** //
+
+.geometry {
+  background-color: $clr-paragraph;
+  .subtitle-info {
+    h2 {
+      color: $clr-button-text;
+    }
+
+    p {
+      color: $clr-subheadline;
+    }
+  }
+}
+
+.geometry__card {
+  background-color: $clr-background;
+
   .card-top {
-    display: flex;
-    align-items: center;
+    @include flex($justify-content: initial, $flex-direction: row);
     gap: 1rem;
 
     .card-top__img-container {
@@ -196,9 +239,7 @@ section {
       border-radius: $border-rad;
       width: 2.2rem;
       height: 2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex($flex-direction: row);
       img {
         width: 1.75rem;
         height: 1.75rem;
@@ -208,147 +249,92 @@ section {
     h3 {
       display: inline-block;
       color: $clr-headline;
-      font-family: 'Metropolis-bold', sans-serif;
     }
   }
 
   form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
     .form-group-container {
-      display: flex;
-      justify-content: space-between;
+      @include flex(
+        $justify-content: space-between,
+        $flex-direction: row,
+        $align-items: initial
+      );
       gap: 0.4rem;
     }
 
-    label,
-    input {
-      display: block;
-      width: 100%;
-    }
-
-    label {
-      color: $clr-headline;
-      margin-bottom: 0.6rem;
-      font-family: 'Metropolis-medium', sans-serif;
-    }
-
-    input {
-      box-sizing: border-box;
-      border: 2px solid $clr-button-text;
-      color: $clr-button-text;
-      border-radius: $border-rad;
-      padding: 0.5rem;
-      font-family: 'Metropolis-bold', sans-serif;
-    }
-
-    button {
-      display: block;
-      width: 100%;
-      background-color: transparent;
-      border: 2px solid $clr-button-text;
-      color: $clr-headline;
-      border-radius: $border-rad;
-      letter-spacing: 2px;
-      padding: 0.5rem;
-      cursor: pointer;
-      font-family: 'Metropolis-bold', sans-serif;
-    }
-  }
-}
-
-.discounts {
-  background-color: $clr-subheadline;
-
-  h2 {
-    color: $clr-headline;
-  }
-
-  p {
-    line-height: 1.5rem;
-    color: $clr-paragraph;
-  }
-
-  .discount-box {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @include breakpoint(medium) {
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
-  }
-}
-
-.discount-box {
-  h3 {
-    color: $clr-button-text;
-    font-family: 'Metropolis-bold', sans-serif;
-    text-align: center;
-  }
-  .discount-box__left {
-    padding: 5%;
-    background-color: $clr-card-background;
-    border-radius: $border-rad;
-
-    @include breakpoint(medium) {
-      padding: 3%;
-      width: 40%;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
     .form-group {
-      color: $clr-subheadline;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      label,
+      input {
+        display: block;
+        width: 100%;
+      }
 
       label {
-        font-family: 'Metropolis-medium', sans-serif;
+        color: $clr-headline;
+        margin-bottom: 0.6rem;
       }
 
       input {
-        box-sizing: border-box;
-        border: 2px solid $clr-subheadline;
-        color: $clr-subheadline;
-
-        border-radius: $border-rad;
-        padding: 0.35rem;
-        font-family: 'Metropolis-bold', sans-serif;
+        border: 2px solid $clr-button-text;
+        color: $clr-button-text;
       }
     }
 
     button {
-      display: block;
-      width: 100%;
-      background-color: transparent;
-      border: 2px solid $clr-subheadline;
-      color: $clr-subheadline;
-      border-radius: $border-rad;
-      letter-spacing: 2px;
-      padding: 0.5rem;
-      cursor: pointer;
-      font-family: 'Metropolis-bold', sans-serif;
+      border: 2px solid $clr-button-text;
+      color: $clr-headline;
+    }
+  }
+}
+
+// ***Discounts Section*** //
+.discounts {
+  background-color: $clr-subheadline;
+
+  .subtitle-info {
+    h2 {
+      color: $clr-headline;
+    }
+
+    p {
+      color: $clr-paragraph;
     }
   }
 
-  .discount-box__right {
-    padding: 5%;
-    border: 2px solid white;
-    background-color: $clr-card-background;
-    border-radius: $border-rad;
+  .discount__cards {
     @include breakpoint(medium) {
-      padding: 3%;
-      width: 40%;
+      align-items: initial;
     }
 
+    h3 {
+      color: $clr-button-text;
+    }
+
+    .card {
+      background-color: $clr-card-background;
+    }
+  }
+}
+
+.discount__cards {
+  .discount__card--left {
+    .form-group {
+      color: $clr-subheadline;
+      @include flex($justify-content: space-between, $flex-direction: row);
+
+      input {
+        border: 2px solid $clr-subheadline;
+        color: $clr-subheadline;
+      }
+    }
+
+    button {
+      border: 2px solid $clr-subheadline;
+      color: $clr-subheadline;
+    }
+  }
+
+  .discount__card--right {
     img {
       display: block;
       margin-inline: auto;
@@ -357,23 +343,18 @@ section {
     }
 
     div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flex($flex-direction: row);
       gap: 0.8rem;
-      justify-content: center;
       margin-bottom: 0.5rem;
-      font-family: 'Metropolis-bold', sans-serif;
+      font-family: $ff-bold;
       font-size: 1.2rem;
     }
   }
 }
 
+//DRAW LINE ON BEFORE PRICE
 .before {
-  text-decoration: line-through;
-  text-decoration-color: $clr-tertiary;
-  text-decoration-style: wavy;
-  text-decoration-thickness: 2px;
+  text-decoration: line-through wavy $clr-tertiary 2px;
 }
 
 $accentcolor: $clr-background;
@@ -389,7 +370,7 @@ $accentcolor: $clr-background;
     display: block;
     background: rgba(0, 0, 0, 0.2);
     color: $clr-subheadline;
-    font-family: 'Metropolis-bold', sans-serif;
+    font-family: $ff-bold;
     border-radius: 5px;
     padding: 10px 20px;
     border: 2px solid grey;
@@ -418,12 +399,15 @@ $accentcolor: $clr-background;
     background-position: center;
     width: 0;
     height: 0;
-    // background-image: url(data:mage/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
     background-image: url('../img/checked.svg');
   }
+
+  //User just have to click on label
   input[type='radio'] {
     display: none;
   }
+
+  //Multiple changes when user clicks on a btn
   input[type='radio']:checked + label {
     background: grey;
     color: white;
@@ -438,6 +422,7 @@ $accentcolor: $clr-background;
   }
 }
 
+//SHOW/HIDE COUPONS
 .view-coupons {
   display: block;
 }
@@ -465,7 +450,7 @@ $accentcolor: $clr-background;
     display: grid;
     place-items: center;
     position: relative;
-    font-family: 'Metropolis-bold', sans-serif;
+    font-family: $ff-bold;
 
     .close-btn {
       position: absolute;
@@ -479,7 +464,7 @@ $accentcolor: $clr-background;
     }
   }
 }
-/* OPEN/CLOSE MODAL */
+// OPEN/CLOSE MODAL
 .open-modal {
   visibility: visible;
   z-index: 10;

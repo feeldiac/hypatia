@@ -474,6 +474,7 @@ button[type='button'] {
   margin-inline: auto;
   margin-block: 3rem;
   width: 68%;
+  max-height: 380px;
 }
 
 .discount__cards .discount__card--right div {
@@ -496,6 +497,10 @@ button[type='button'] {
   margin-bottom: 0.5rem;
   font-family: "Metropolis-bold", sans-serif;
   font-size: 1.2rem;
+}
+
+.discount__cards .discount__card--right .before-container {
+  line-height: 26px;
 }
 
 .before {

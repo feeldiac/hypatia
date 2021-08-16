@@ -340,6 +340,7 @@ button[type='button'] {
       margin-inline: auto;
       margin-block: 3rem;
       width: 68%;
+      max-height: 380px;
     }
 
     div {
@@ -348,6 +349,10 @@ button[type='button'] {
       margin-bottom: 0.5rem;
       font-family: $ff-bold;
       font-size: 1.2rem;
+    }
+
+    .before-container {
+      line-height: 26px;
     }
   }
 }

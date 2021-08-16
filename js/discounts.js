@@ -32,12 +32,6 @@ const beforeSpans = document.querySelectorAll('.before-container span');
 const beforeValue = document.querySelector('.before-value');
 const afterValue = document.querySelector('.after-value');
 
-//Modal
-// const modal = document.querySelector('.modal-overlay');
-// const closeBtn = document.querySelector('.close-btn');
-// const modalTitle = document.querySelector('.modal-title');
-// const modalMsg = document.querySelector('.modal-msg');
-
 //Show/hide coupons and reset values
 addCouponBtn.addEventListener('click', function () {
   if (!couponContainer.classList.contains('view-coupons')) {
@@ -55,8 +49,14 @@ addCouponBtn.addEventListener('click', function () {
 
 //Show current price dinamically
 priceInput.addEventListener('input', function () {
-  beforeValue.innerHTML = `${priceInput.value} USD`;
+  beforeValue.innerHTML = `${priceInput.value} USD 🎈`;
 });
+
+//Calculating new price (with 2 decimals)
+function newPrice(price, discount) {
+  const newPrice = price - (price * discount) / 100;
+  return newPrice.toFixed(2);
+}
 
 //Execute the calculation depending if the user type a discount or use a valid coupon
 calculateBtn.addEventListener('click', function () {
@@ -75,7 +75,7 @@ calculateBtn.addEventListener('click', function () {
     beforeSpans.forEach(function (span) {
       span.classList.add('before');
     });
-    afterValue.innerHTML = `after: ${newPrice(price, discount)} USD`;
+    afterValue.innerHTML = `🤙 after: ${newPrice(price, discount)} USD`;
   } else {
     //Open modal window and show error msg
     modalMsg.innerHTML = 'Please introduce valid inputs';
@@ -83,14 +83,3 @@ calculateBtn.addEventListener('click', function () {
     modal.classList.add('open-modal');
   }
 });
-
-//Close modal window
-// closeBtn.addEventListener('click', function () {
-//   modal.classList.remove('open-modal');
-// });
-
-//Calculating new price (with 2 decimals)
-function newPrice(price, discount) {
-  const newPrice = price - (price * discount) / 100;
-  return newPrice.toFixed(2);
-}

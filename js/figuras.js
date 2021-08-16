@@ -1,20 +1,3 @@
-//      Modal window
-const modalBtns = document.querySelectorAll('.modal-btn');
-const modal = document.querySelector('.modal-overlay');
-const closeBtn = document.querySelector('.close-btn');
-const modalTitle = document.querySelector('.modal-title');
-const modalMsg = document.querySelector('.modal-msg');
-
-modalBtns.forEach(function (modalBtn) {
-  modalBtn.addEventListener('click', function () {
-    modal.classList.add('open-modal');
-  });
-});
-
-closeBtn.addEventListener('click', function () {
-  modal.classList.remove('open-modal');
-});
-
 //      Square's code
 const squareSide = document.getElementById('square-side');
 const squarePerimeterBtn = document.getElementById('square-perimeter');
@@ -30,11 +13,13 @@ function squareArea(side) {
 
 squarePerimeterBtn.addEventListener('click', function () {
   const perimeter = squarePerimeter(parseFloat(squareSide.value));
+  modalTitle.innerHTML = 'Square';
   modalMsg.innerHTML = `The perimeter of the square is: ${perimeter} units`;
 });
 
 squareAreaBtn.addEventListener('click', function () {
   const area = squareArea(parseFloat(squareSide.value));
+  modalTitle.innerHTML = 'Square';
   modalMsg.innerHTML = `The area of the square is: ${area} units`;
 });
 
@@ -61,6 +46,7 @@ trianglePerimeterBtn.addEventListener('click', function () {
     parseFloat(triangleSideB.value),
     parseFloat(triangleSideC.value)
   );
+  modalTitle.innerHTML = 'Triangle';
   modalMsg.innerHTML = `The perimeter of the triangle is: ${perimeter} units`;
 });
 
@@ -70,6 +56,7 @@ triangleAreaBtn.addEventListener('click', function () {
     parseFloat(triangleSideB.value),
     parseFloat(triangleSideC.value)
   );
+  modalTitle.innerHTML = 'Triangle';
   modalMsg.innerHTML = `The area of the triangle is: ${area} units`;
 });
 
@@ -98,11 +85,13 @@ function circleArea(radius) {
 
 circlePerimeterBtn.addEventListener('click', function () {
   const perimeter = circlePerimeter(parseFloat(circleRadius.value));
+  modalTitle.innerHTML = 'Circle';
   modalMsg.innerHTML = `The perimeter of the circle is: ${perimeter} units`;
 });
 
 circleAreaBtn.addEventListener('click', function () {
   const area = circleArea(parseFloat(circleRadius.value));
+  modalTitle.innerHTML = 'Circle';
   modalMsg.innerHTML = `The area of the circle is: ${area} units`;
 });
 
@@ -125,6 +114,7 @@ rectanglePerimeterBtn.addEventListener('click', function () {
     parseFloat(rectangleSideA.value),
     parseFloat(rectangleSideB.value)
   );
+  modalTitle.innerHTML = 'Rectangle';
   modalMsg.innerHTML = `The perimeter of the rectangle is: ${perimeter} units`;
 });
 
@@ -133,5 +123,6 @@ rectangleAreaBtn.addEventListener('click', function () {
     parseFloat(rectangleSideA.value),
     parseFloat(rectangleSideB.value)
   );
+  modalTitle.innerHTML = 'Rectangle';
   modalMsg.innerHTML = `The area of the rectangle is: ${area} units`;
 });

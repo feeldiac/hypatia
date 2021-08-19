@@ -432,6 +432,115 @@ $accentcolor: $clr-background;
   display: block;
 }
 
+// ***Statistics Section*** //
+
+.inline-container {
+  @include flex($flex-direction: row, $flex-wrap: wrap);
+}
+
+.statistics {
+  background-color: $clr-paragraph;
+
+  .subtitle-info {
+    h2 {
+      color: $clr-button-text;
+    }
+
+    p {
+      color: $clr-subheadline;
+    }
+  }
+
+  .cards-container {
+    @include breakpoint(medium) {
+      @include flex($justify-content: space-between, $flex-direction: column);
+    }
+    // border: 2px solid blue;
+  }
+
+  .card {
+    @include breakpoint(medium) {
+      width: 94%;
+    }
+    // border: 2px solid black;
+    background-color: $clr-background;
+  }
+}
+
+.statistics__card--top {
+  h3 {
+    color: $clr-headline;
+    font-size: 1.25rem;
+  }
+
+  h3 + p {
+    text-align: center;
+    color: $clr-headline;
+    font-size: 0.95rem;
+  }
+
+  .form-group {
+    position: relative;
+    display: inline-block;
+    margin: 0.6rem;
+
+    div {
+      display: inline-block;
+    }
+
+    input {
+      width: 4.5rem;
+      padding-top: 0.595rem;
+      padding-bottom: 0.595rem;
+      border: 2px solid $clr-button-text;
+      color: $clr-button-text;
+    }
+
+    label {
+      color: $clr-headline;
+      position: absolute;
+      left: 23px;
+      top: 41px;
+    }
+
+    button {
+      display: inline-block;
+      width: auto;
+      letter-spacing: 0;
+      border: 2px solid $clr-button-text;
+    }
+  }
+}
+
+.statistics__card--bottom {
+  .outputs-container {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    span {
+      font-family: $ff-medium;
+      font-size: 2rem;
+      color: $clr-headline;
+      margin: 0.5rem;
+    }
+  }
+
+  .statistics__results {
+    @include flex(
+      $justify-content: space-between,
+      $flex-direction: row,
+      $flex-wrap: wrap,
+      $align-items: center
+    );
+
+    .statistic__result {
+      font-family: $ff-medium;
+      font-size: 1.25rem;
+      color: $clr-headline;
+    }
+  }
+}
+
 //modal window
 .modal-overlay {
   position: fixed;

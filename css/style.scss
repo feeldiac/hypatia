@@ -502,13 +502,13 @@ $accentcolor: $clr-background;
       left: 23px;
       top: 41px;
     }
+  }
 
-    button {
-      display: inline-block;
-      width: auto;
-      letter-spacing: 0;
-      border: 2px solid $clr-button-text;
-    }
+  button {
+    display: inline-block;
+    width: auto;
+    letter-spacing: 0;
+    border: 2px solid $clr-button-text;
   }
 }
 

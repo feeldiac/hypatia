@@ -675,7 +675,7 @@ button[type='button'] {
   top: 41px;
 }
 
-.statistics__card--top .form-group button {
+.statistics__card--top button {
   display: inline-block;
   width: auto;
   letter-spacing: 0;

@@ -49,5 +49,49 @@ addBtn.addEventListener('click', function () {
   inputGenerator(counter);
 });
 
-//3. Display every number in ascendent order
-//4. Calculate mean, median and mode
+//3. Calculate mean, median and mode
+//Mean
+const nums = [1, 2, 3, 4, 5, 6, 5, 1, 5, 5, 5, 5];
+
+function mean(dataSet) {
+  const totalNumbers = dataSet.length;
+  const sumOfNumbers = dataSet.reduce((acum, currentValue) => {
+    return acum + currentValue;
+  });
+  return sumOfNumbers / totalNumbers;
+}
+console.log(nums);
+// console.log(mean(nums));
+
+//Median
+function median(dataSet) {
+  const totalNumbers = dataSet.length;
+  const halfIndex = Math.floor(totalNumbers / 2);
+  //Sort numbers in ascendent order
+  const sortedDataSet = dataSet.sort((a, b) => a - b);
+  console.log(sortedDataSet);
+  //Check dataSet size
+  if (totalNumbers % 2 === 0) {
+    return mean([sortedDataSet[halfIndex], sortedDataSet[halfIndex - 1]]);
+  } else {
+    return sortedDataSet[halfIndex];
+  }
+}
+// console.log(median(nums));
+
+//Mode
+function mode(dataSet) {
+  const dataSetObj = {};
+  dataSet.forEach(function (num) {
+    dataSetObj[num] ? (dataSetObj[num] += 1) : (dataSetObj[num] = 1);
+  });
+  const dataSetEntries = Object.entries(dataSetObj);
+  const sortedDataSetEntries = dataSetEntries.sort(function (aArr, bArr) {
+    return aArr[1] - bArr[1];
+  });
+  return Number(sortedDataSetEntries[sortedDataSetEntries.length - 1][0]);
+}
+
+// console.log(mode(nums), typeof mode(nums));
+
+//4. Display every number in ascendent order

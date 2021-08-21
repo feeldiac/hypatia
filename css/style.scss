@@ -516,10 +516,13 @@ $accentcolor: $clr-background;
   .outputs-container {
     width: 100%;
     margin-bottom: 2rem;
+    font-family: $ff-medium;
+    font-size: 3rem;
+    color: $clr-headline;
 
     span {
       font-family: $ff-medium;
-      font-size: 2rem;
+      font-size: 5rem;
       color: $clr-headline;
       margin: 0.5rem;
     }

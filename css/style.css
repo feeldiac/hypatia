@@ -685,11 +685,14 @@ button[type='button'] {
 .statistics__card--bottom .outputs-container {
   width: 100%;
   margin-bottom: 2rem;
+  font-family: "Metropolis-medium", sans-serif;
+  font-size: 3rem;
+  color: #fffffe;
 }
 
 .statistics__card--bottom .outputs-container span {
   font-family: "Metropolis-medium", sans-serif;
-  font-size: 2rem;
+  font-size: 5rem;
   color: #fffffe;
   margin: 0.5rem;
 }

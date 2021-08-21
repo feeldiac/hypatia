@@ -1,9 +1,13 @@
 //1. Event (click and enter) for adding a number (form-group)
+//2. Change the label, for, id atributes for every form group
+//3. Calculate mean, median and mode
+//4. Display every number in ascendent order
+
+// 1 - 2 Dealing with Inputs
 let counter = 1;
 let addBtn = document.getElementById('add-input');
 const inputsContainer = document.querySelector('.inputs-container');
 
-//2. Change the label, for, id atributes for every form group
 function ordinalSuffixGenerator(number) {
   const reversedArray = number.toString().split('').reverse();
 
@@ -49,19 +53,50 @@ addBtn.addEventListener('click', function () {
   inputGenerator(counter);
 });
 
-//3. Calculate mean, median and mode
-//Mean
-const nums = [1, 2, 3, 4, 5, 6, 5, 1, 5, 5, 5, 5];
+// 3 - 4 Calculations and displaying info
 
+//Initializing obj to not repeat inputs
+const filledInput = {};
+
+//outputs
+const meanOutput = document.getElementById('mean');
+const medianOutput = document.getElementById('median');
+const modeOutput = document.getElementById('mode');
+const outputsContainer = document.querySelector('.outputs-container');
+
+inputsContainer.addEventListener('change', function (event) {
+  //Capture users input
+  let currentValue = Number(event.target.value);
+  if (event.target.classList.contains('stat-input')) {
+    if (currentValue || currentValue === 0) {
+      //Using an object for the dataset instead of pushing currentValue
+      //we avoid saving numbers for the same input
+      filledInput[event.target.id] = currentValue;
+      const filledInputValues = Object.values(filledInput);
+
+      //Displaying results
+      meanOutput.innerHTML = `Mean👉 ${mean(filledInputValues)}`;
+      medianOutput.innerHTML = `Median👉 ${median(filledInputValues)}`;
+      modeOutput.innerHTML = `Mode👉 ${mode(filledInputValues)}`;
+
+      //Displaying sorted inputs
+      outputsContainer.innerHTML = '';
+      const sortedInputs = filledInputValues.sort((a, b) => a - b);
+      sortedInputs.forEach(function (sortedValue) {
+        outputsContainer.innerHTML += `<span class="output">${sortedValue} - </span>`;
+      });
+    }
+  }
+});
+
+//Mean
 function mean(dataSet) {
   const totalNumbers = dataSet.length;
   const sumOfNumbers = dataSet.reduce((acum, currentValue) => {
     return acum + currentValue;
   });
-  return sumOfNumbers / totalNumbers;
+  return (sumOfNumbers / totalNumbers).toFixed(2);
 }
-console.log(nums);
-// console.log(mean(nums));
 
 //Median
 function median(dataSet) {
@@ -69,7 +104,6 @@ function median(dataSet) {
   const halfIndex = Math.floor(totalNumbers / 2);
   //Sort numbers in ascendent order
   const sortedDataSet = dataSet.sort((a, b) => a - b);
-  console.log(sortedDataSet);
   //Check dataSet size
   if (totalNumbers % 2 === 0) {
     return mean([sortedDataSet[halfIndex], sortedDataSet[halfIndex - 1]]);
@@ -77,13 +111,14 @@ function median(dataSet) {
     return sortedDataSet[halfIndex];
   }
 }
-// console.log(median(nums));
 
 //Mode
 function mode(dataSet) {
   const dataSetObj = {};
   dataSet.forEach(function (num) {
-    dataSetObj[num] ? (dataSetObj[num] += 1) : (dataSetObj[num] = 1);
+    dataSetObj[num] || dataSetObj[num] === 0
+      ? (dataSetObj[num] += 1)
+      : (dataSetObj[num] = 1);
   });
   const dataSetEntries = Object.entries(dataSetObj);
   const sortedDataSetEntries = dataSetEntries.sort(function (aArr, bArr) {
@@ -91,7 +126,3 @@ function mode(dataSet) {
   });
   return Number(sortedDataSetEntries[sortedDataSetEntries.length - 1][0]);
 }
-
-// console.log(mode(nums), typeof mode(nums));
-
-//4. Display every number in ascendent order

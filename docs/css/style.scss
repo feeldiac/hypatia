@@ -221,7 +221,11 @@ button[type='button'] {
   }
 }
 
-// ***Geometry Section*** //
+@keyframes rotation {
+  50% {
+    transform: rotate(180deg);
+  }
+}
 
 .geometry {
   background-color: $clr-paragraph;
@@ -263,6 +267,7 @@ button[type='button'] {
       img {
         width: 1.75rem;
         height: 1.75rem;
+        animation: rotation 2s ease-in-out 2s 5;
       }
     }
 

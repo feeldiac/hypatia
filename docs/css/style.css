@@ -315,6 +315,20 @@ button[type='button'] {
   font-family: "Metropolis-bold", sans-serif;
 }
 
+@-webkit-keyframes rotation {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes rotation {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
 .geometry {
   background-color: #abd1c6;
 }
@@ -386,6 +400,8 @@ button[type='button'] {
 .geometry__card .card-top .card-top__img-container img {
   width: 1.75rem;
   height: 1.75rem;
+  -webkit-animation: rotation 2s ease-in-out 2s 5;
+          animation: rotation 2s ease-in-out 2s 5;
 }
 
 .geometry__card .card-top h3 {

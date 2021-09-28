@@ -150,6 +150,17 @@ button[type='button'] {
   gap: 1rem;
 }
 
+.nav ul li a {
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+}
+
+.nav ul li a:hover,
+.nav ul li a:active {
+  -webkit-text-decoration: underline wavy #fffffe 2.5px;
+          text-decoration: underline wavy #fffffe 2.5px;
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -320,6 +331,16 @@ button[type='button'] {
   background-color: #004643;
 }
 
+.geometry__card .modal-btn {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.geometry__card .modal-btn:hover,
+.geometry__card .modal-btn:active {
+  border-color: #fffffe;
+}
+
 .geometry__card .card-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -467,6 +488,15 @@ button[type='button'] {
 .discount__cards .discount__card--left button {
   border: 2px solid #0f3433;
   color: #0f3433;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.discount__cards .discount__card--left button:hover,
+.discount__cards .discount__card--left button:active {
+  color: #fffffe;
+  border-color: #001e1d;
+  background-color: #004643;
 }
 
 .discount__cards .discount__card--right img {

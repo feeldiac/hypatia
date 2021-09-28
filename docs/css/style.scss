@@ -114,6 +114,16 @@ button[type='button'] {
     padding: 0;
     @include flex($flex-direction: row);
     gap: 1rem;
+
+    li {
+      a {
+        transition-duration: 0.15s;
+      }
+      a:hover,
+      a:active {
+        text-decoration: underline wavy $clr-headline 2.5px;
+      }
+    }
   }
 }
 
@@ -229,6 +239,16 @@ button[type='button'] {
 .geometry__card {
   background-color: $clr-background;
 
+  .modal-btn {
+    // border-color: inherit;
+    transition-duration: 0.5s;
+  }
+
+  .modal-btn:hover,
+  .modal-btn:active {
+    border-color: $clr-headline;
+  }
+
   .card-top {
     @include flex($justify-content: initial, $flex-direction: row);
     gap: 1rem;
@@ -331,6 +351,14 @@ button[type='button'] {
     button {
       border: 2px solid $clr-subheadline;
       color: $clr-subheadline;
+      transition-duration: 0.5s;
+    }
+
+    button:hover,
+    button:active {
+      color: $clr-headline;
+      border-color: $clr-button-text;
+      background-color: $clr-background;
     }
   }
 
